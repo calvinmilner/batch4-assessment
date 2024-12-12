@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events List</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <td>Event ID</td>
+            <td>Event Name</td>
+            <td>Event Size</td>
+            <td>Event Date</td>
+            <td>Participants</td>
+        </thead>
+        <tbody>
+            <tr data-th-each="e : ${eventList}" data-th-object="${e}">
+                <td data-th-text="*{eventId}"></td>
+                <td data-th-text="*{eventName}"></td>
+                <td data-th-text="*{eventSize}"></td>
+                <td data-th-text="${#dates.format(e.eventDate, 'dd-MM-yyyy')}"></td>
+                <td data-th-text="*{participants}"></td>
+                <form action="/register" method="get">
+                    <input type="hidden" name="id" data-th-value="*{eventId}">
+                    <td><button type="submit">Register</button></td>
+                </form>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

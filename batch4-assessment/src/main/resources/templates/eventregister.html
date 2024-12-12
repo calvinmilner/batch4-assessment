@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Event</title>
+</head>
+<body>
+    <h1>Register event</h1>
+    <form action="/process" method="post" th:object="${information}">
+        <table>
+            <tr><td></td>You have choose to register for the following event:</tr>
+            <tr><h2 data-th-text="${event.eventName}"></h2></tr>
+            <tr><h2 data-th-text="${#dates.format(event.eventDate, 'dd-MM-yyyy')}"></h2></tr>
+            <tr>
+                <td>Full Name: </td>
+                <td><input type="text" name="fullName" id="fullName" data-th-field="*{fullName}"></td>
+            </tr>
+            <tr>
+                <td>Birth Date: </td>
+                <td><input type="date" name="birthDate" id="birthDate" data-th-field="*{birthDate}"></td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td><input type="email" name="email" id="email" data-th-field="*{email}"></td>
+            </tr>
+            <tr>
+                <td>Mobile Number: </td>
+                <td><input type="" name="phone" id="phone" data-th-field="*{phone}"></td>
+            </tr>
+            <tr>
+                <td>Number of Tickets: </td>
+                <td><input type="number" name="tickets" id="tickets" data-th-field="*{tickets}"></td>
+            </tr>
+            <tr>
+                
+                <td>
+                    <input type="hidden" name="id" id="id" data-th-value="${event.eventId}">
+                    <button type="submit">Register</button>
+                </td>
+            </tr>
+            
+        </table>
+    </form>
+</body>
+</html>

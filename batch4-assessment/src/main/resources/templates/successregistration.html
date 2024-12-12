@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Success</h1>
+    <h2>You have successfully register for the event:</h2>
+    <h2 data-th-text="${event.eventName}"></h2>
+    <h2 data-th-text="${#dates.format(event.eventDate, 'dd-MM-yyyy')}"></h2>
+    <div><a data-th-href="@{/}"><button>Back to Event Listing</button></a></div>
+</body>
+</html>
