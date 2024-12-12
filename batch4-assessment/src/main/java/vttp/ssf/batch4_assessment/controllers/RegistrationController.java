@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import jakarta.validation.Valid;
 import vttp.ssf.batch4_assessment.models.Event;
 import vttp.ssf.batch4_assessment.models.Information;
 import vttp.ssf.batch4_assessment.services.DatabaseService;

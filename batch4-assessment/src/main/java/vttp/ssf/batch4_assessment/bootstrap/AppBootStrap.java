@@ -3,9 +3,8 @@ package vttp.ssf.batch4_assessment.bootstrap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
-// import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
 import vttp.ssf.batch4_assessment.models.Event;
@@ -17,10 +16,8 @@ public class AppBootStrap implements CommandLineRunner {
     @Autowired
     private DatabaseService dbServ;
     
-    // @Value("classpath:/events.json")
-    // private String eventsFile;
+    @Value("${json.file.path}")
     private String eventsFile = "events.json";
-    // Resource events;
 
     @Override
     public void run(String... args) {
